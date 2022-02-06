@@ -21,24 +21,30 @@
 #include <vector>
 using namespace std;
 //программа для -1
-/*
+
 void sort(vector <int> numbers) {
     
         //сортировка
-    for (int j = 0; j < numbers.size(); j++) {
-        for (int i = 0; i < numbers.size() - i - 1; i++) {
-            if (numbers[i] > numbers[i + 1]) {
-                    int temp = numbers[i + 1];
-                    numbers[i + 1] = numbers[i];
-                    numbers[i] = temp;
+{
+            for (int j = 0; j < numbers.size(); j++)
+            {
+                for (int i = 0; i < numbers.size() - j - 1; i++)
+                {
+                    if (numbers[i] > numbers[i + 1])
+                    {
+                        int temp = numbers[i];
+                        numbers[i] = numbers[i + 1];
+                        numbers[i + 1] = temp;
+                    }
+                }
             }
+            for (int k = 0; k < numbers.size(); k++)
+            {
+                cout << numbers[k] << " ";
+            }
+            cout << endl;
         }
-    }
-    for (int k = 0; k < numbers.size(); k++) {
-        cout << numbers[k] << " ";
-    }
-    cout << endl;
-}*/
+}
 
 int main()
 {
@@ -49,26 +55,7 @@ int main()
         cin >> nInput;
         //если -1 выполнить программу
         if (nInput == -1) 
-        //    sort(numbers);
-        {
-            for (int j = 0; j < numbers.size(); j++) 
-            {
-                for (int i = 0; i < numbers.size() - j - 1; i++) 
-                {
-                    if (numbers[i] > numbers[i + 1]) 
-                    {
-                        int temp = numbers[i];
-                        numbers[i] = numbers[i + 1];
-                        numbers[i + 1] = temp;
-                    }
-                }
-            }
-            for (int k = 0; k < numbers.size(); k++) 
-            {
-                cout << numbers[k] << " ";
-            }
-            cout << endl;
-        }
+            sort(numbers);
         //иначе записать число в конец вектора
         else
             numbers.push_back(nInput);
